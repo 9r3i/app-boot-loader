@@ -7,3 +7,20 @@ I use this to build a simple remote app, especially for android app using cordov
 const app=new AppBootLoader(<hostname>, <appname>);
 app.init();
 ```
+
+# Using AppBasic.js
+```js
+function initialize(method){
+  var methods=[
+    'initDefault',
+    'initSplashScreenLoader',
+    'initCircleProgress'
+  ],
+  init=typeof method==='number'
+    &&methods.hasOwnProperty(method)
+    ?methods[method]:methods[0],
+  host='https://9r3i.web.id/api/base/',
+  basic=new AppBasic(host);
+  return basic[init]();
+}
+```
