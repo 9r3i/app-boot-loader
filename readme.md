@@ -4,6 +4,6 @@ I use this to build a simple remote app, especially for android app using cordov
 
 # Usage
 ```js
-const app=new AppBootLoader;
+const app=new AppBootLoader(<hostname>, <appname>);
 app.init();
 ```
