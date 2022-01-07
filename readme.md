@@ -21,6 +21,13 @@ function initialize(method){
     ?methods[method]:methods[0],
   host='https://9r3i.web.id/api/base/',
   basic=new AppBasic(host);
+  window.basic=basic;
   return basic[init]();
 }
 ```
+
+# Sample Page
+
+[https://9r3i.github.io/app-boot-loader/](https://9r3i.github.io/app-boot-loader/)
+
+
