@@ -1,0 +1,125 @@
+/* SplashScreenLoader.css */
+
+/* splash screen loader */
+.splash-screen:before,.splash-screen:after{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.splash-screen{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  width:100vw;
+  margin:0px;
+  padding:0px;
+  position:fixed;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  z-index:999;
+  transition:all 0.3s ease 0s;
+  background-color:#fff;
+  overflow:hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.splash-screen .splash-screen-text{
+  transition:all 0.3s ease 0s;
+  position:absolute;
+  display:block;
+  margin:-30px auto 0px;
+  width:160px;
+  height:auto;
+  border:0px none;
+  text-align:center;
+  color:#999;
+  background-color:transparent;
+  font-family:system-ui;
+  font-size:12px;
+  animation:loadtextlistening 1.4s infinite 0s;
+}
+.splash-screen .splash-screen-text:before{
+  content:attr(data-text);
+}
+.splash-screen .splash-screen-text-loaded{
+  animation:none;
+}
+.splash-screen .splash-screen-loader{
+  transition:all 0.3s ease 0s;
+  width:160px;
+  height:9px;
+  border:0px none;
+  border-radius:7px;
+  background-color:#eee;
+  overflow:hidden;
+}
+.splash-screen .splash-screen-loader .splash-screen-progress{
+  transition:all 0.3s ease 0s;
+  width:0px;
+  height:9px;
+  border-radius:0px;
+  background-color:#59d;
+}
+.splash-screen-loading .splash-screen-loader .splash-screen-progress{
+  animation:loadprogress 1s alternate 0.5s;
+}
+.splash-screen-loaded .splash-screen-loader .splash-screen-progress{
+  width:100%;
+}
+.splash-screen-listening .splash-screen-loader .splash-screen-progress{
+  transition:all 0.3s ease 0s;
+  width:20%;
+  height:9px;
+  border-radius:7px;
+  background-color:#59d;
+  animation:loadlistening 2s infinite 0s;
+}
+@keyframes loadprogress{
+  0%{width:0%;}
+  100%{width:100%;}
+}
+@keyframes loadlistening{
+  0%{margin-left:-10%;}
+  50%{margin-left:90%;}
+  100%{margin-left:-10%;}
+}
+@keyframes loadtextlistening{
+  0%{opacity:1;}
+  50%{opacity:0.3;}
+  100%{opacity:1;}
+}
+button.splash-screen-try-again{
+  padding:0px 0px;
+  margin:0px auto;
+  display:inline-block;
+  position:absolute;
+  top:calc(50vh - 15px);
+  left:calc(50vw - 50px);
+  width:100px;
+  height:30px;
+  border:0px none;
+  border-radius:15px;
+  background-color:#37b;
+  color:#fff;
+  font-family:system-ui;
+  font-size:12px;
+  font-weight:bold;
+  text-shadow:-1px -1px 0px #333;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:888;
+  box-shadow:3px 3px 5px #999;
+  transition:all 0.3s ease 0s;
+  overflow:hidden;
+  white-space:pre;
+  word-break:none;
+}
+/* end of splash screen loader */
+
+

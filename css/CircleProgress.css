@@ -1,0 +1,103 @@
+/* CircleProgress.css */
+
+/* circle progress */
+.circle-progress{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  width:100vw;
+  margin:0px;
+  padding:0px;
+  position:fixed;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  z-index:999;
+  transition:all 0.3s ease 0s;
+  background-color:#fff;
+  overflow:hidden;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+.circle-progress-ring-circle{
+  transition:0.1s stroke-dashoffset;
+  transform:rotate(-90deg);
+  transform-origin:50% 50%;
+}
+.circle-progress-text{
+  transition:all 0.3s ease 0s;
+  position:absolute;
+  display:block;
+  margin:0px auto 0px;
+  width:160px;
+  height:auto;
+  border:0px none;
+  text-align:center;
+  color:#999;
+  background-color:transparent;
+  font-family:system-ui;
+  font-size:12px;
+  animation:loadtextlistening 1.4s infinite 0s;
+}
+.circle-progress-listening{
+  transition:all 0.3s ease 0s;
+  animation:circlelistening 2s infinite 0s;
+	stroke-dasharray:360 360;
+	  stroke-dashoffset:360;
+  
+}
+@keyframes circlelistening{
+	0%{
+	  transform:rotate(0deg);
+	  stroke-dashoffset:360;
+	  stroke:#9d5;
+	}
+	50%{
+	  transform:rotate(500deg);
+	  stroke-dashoffset:120;
+	  stroke:#d95;
+	}
+	100%{
+	  transform:rotate(1080deg);
+	  stroke-dashoffset:360;
+	}
+}
+@keyframes loadtextlistening{
+  0%{opacity:1;}
+  50%{opacity:0.3;}
+  100%{opacity:1;}
+}
+button.circle-progress-try-again{
+  padding:0px 0px;
+  margin:0px auto;
+  display:inline-block;
+  position:absolute;
+  top:calc(50vh - 15px);
+  left:calc(50vw - 50px);
+  width:100px;
+  height:30px;
+  border:0px none;
+  border-radius:15px;
+  background-color:#37b;
+  color:#fff;
+  font-family:system-ui;
+  font-size:12px;
+  font-weight:bold;
+  text-shadow:-1px -1px 0px #333;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:888;
+  box-shadow:3px 3px 5px #999;
+  transition:all 0.3s ease 0s;
+  overflow:hidden;
+  white-space:pre;
+  word-break:none;
+}
+/* end of circle progress */
+
+
