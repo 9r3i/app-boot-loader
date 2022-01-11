@@ -1,33 +1,60 @@
-# app-boot-loader
-Whatever it is, I want to call it AppBootLoader.
+# AppBootLoader
+
+Whatever it is, I want to call it <strong>AppBootLoader</strong>.
 I use this to build a simple remote app, especially for android app using cordova, so I don't have to upload package and be reviewed each time I update the code.
+
 
 # Usage
 ```js
-const app=new AppBootLoader(<hostname>, <appname>);
+const app=new AppBootLoader(<hostname>, <appname>, [method:post]);
 app.init();
 ```
+Parameter method is optional between post and get, default: post
+
 
 # Using AppBasic.js
 ```js
 function initialize(method){
-  var methods=[
-    'initDefault',
-    'initSplashScreenLoader',
-    'initCircleProgress'
-  ],
-  init=typeof method==='number'
-    &&methods.hasOwnProperty(method)
-    ?methods[method]:methods[0],
-  host='https://9r3i.web.id/api/base/',
-  basic=new AppBasic(host);
-  window.basic=basic;
-  return basic[init]();
+  /* set _basic as global variable, so the app can use its environments */
+  window._basic=new AppBasic;
+  /* initialize the basic */
+  return _basic.init(method);
 }
 ```
+HTML meta tag must be add some configurations
+```html
+<meta name="apphost" content="https://9r3i.github.io/app-boot-loader/base/test.app" />
+<meta name="appmethod" content="get" />
+<meta name="appname" content="test" />
+```
+See more detail sample in index.html
+
 
 # Sample Page
 
 [https://9r3i.github.io/app-boot-loader/](https://9r3i.github.io/app-boot-loader/)
+
+
+# Changes
+
+From v1.2.2.210
+
+### Changes of AppBootLoader.js v1.3.0
+* add get method of stream to help static host
+* optimize method uniform, the http query builder, being recursively
+* add module type in app data
+* add parameter method as optional, default: post
+
+### Changes of AppBasic.js v220
+* add optional stream method in constructor parameter, default: post
+* add optional initialize method 0-2, default: 0
+* add apphost meta tag, could be overwritten by parameter host
+* add appmethod meta tag, could be overwritten by parameter method
+
+### Others
+* add start.js and remove test.js
+* remove test.html, test page in index.html
+* add static host with method get
+
 
 

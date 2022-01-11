@@ -1,15 +1,39 @@
 /* AppBasic.js -- requires AppBootLoader.js */
-;function AppBasic(host){
-this.version=210;
-/* get appname from hatm meta tag */
-this.meta=document.querySelector('meta[name="appname"]');
-this.appname=this.meta?this.meta.content:'';
-this.abl=new AppBootLoader(host,this.appname);
+;function AppBasic(host,method){
+this.version=220;
+/* get appname from html meta tag */
+this.meta={
+  name:document.querySelector('meta[name="appname"]'),
+  host:document.querySelector('meta[name="apphost"]'),
+  method:document.querySelector('meta[name="appmethod"]'),
+};
+this.config={
+  appname:this.meta.name?this.meta.name.content:'',
+  host:host?host:this.meta.host?this.meta.host.content:'',
+  method:method?method:this.meta.method?this.meta.method.content:'',
+};
+this.abl=new AppBootLoader(
+  this.config.host,
+  this.config.appname,
+  this.config.method
+);
 this.progress=this.abl.buildElement('progress');
 this.percent=this.abl.buildElement('span','0% Loading...');
 this.section=null;
 this.parent=null;
 this.loaded=null;
+/* initializing */
+this.init=function(method){
+  var methods=[
+    'initDefault',
+    'initSplashScreenLoader',
+    'initCircleProgress'
+  ],
+  init=typeof method==='number'
+    &&methods.hasOwnProperty(method)
+    ?methods[method]:methods[0];
+  return this[init]();
+};
 /* loader */
 this.loader=function(e){
   var cent=Math.floor(e.loaded/e.total*100);
