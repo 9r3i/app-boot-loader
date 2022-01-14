@@ -1,3 +1,13 @@
+
+[![Author](https://img.shields.io/badge/author-9r3i-lightgrey.svg)](https://github.com/9r3i)
+[![License](https://img.shields.io/github/license/9r3i/app-boot-loader.svg)](https://github.com/9r3i/app-boot-loader/blob/master/license.txt)
+[![Forks](https://img.shields.io/github/forks/9r3i/app-boot-loader.svg)](https://github.com/9r3i/app-boot-loader/network)
+[![Stars](https://img.shields.io/github/stars/9r3i/app-boot-loader.svg)](https://github.com/9r3i/app-boot-loader/stargazers)
+[![Issues](https://img.shields.io/github/issues/9r3i/app-boot-loader.svg)](https://github.com/9r3i/app-boot-loader/issues)
+[![Release](https://img.shields.io/github/release/9r3i/app-boot-loader.svg)](https://github.com/9r3i/app-boot-loader/releases)
+[![Package](https://img.shields.io/npm/v/app-boot-loader.svg?label=version)](https://www.npmjs.com/package/app-boot-loader)
+
+
 # AppBootLoader
 
 Whatever it is, I want to call it <strong>AppBootLoader</strong>.
