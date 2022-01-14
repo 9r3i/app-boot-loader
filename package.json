@@ -1,6 +1,6 @@
 {
   "name": "app-boot-loader",
-  "version": "1.3.0-2",
+  "version": "1.3.0-3",
   "description": "AppBootLoader",
   "main": "js/abl.js",
   "scripts": {
@@ -15,5 +15,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/9r3i/app-boot-loader.git"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   }
 }
