@@ -5,7 +5,7 @@
 [![Stars](https://img.shields.io/github/stars/9r3i/app-boot-loader.svg)](https://github.com/9r3i/app-boot-loader/stargazers)
 [![Issues](https://img.shields.io/github/issues/9r3i/app-boot-loader.svg)](https://github.com/9r3i/app-boot-loader/issues)
 [![Release](https://img.shields.io/github/release/9r3i/app-boot-loader.svg)](https://github.com/9r3i/app-boot-loader/releases)
-[![Package](https://img.shields.io/npm/v/app-boot-loader.svg?label=version)](https://www.npmjs.com/package/app-boot-loader)
+[![Package](https://img.shields.io/npm/v/app-boot-loader.svg?label=npm)](https://www.npmjs.com/package/app-boot-loader)
 
 
 # AppBootLoader
