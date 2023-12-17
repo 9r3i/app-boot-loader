@@ -15,10 +15,6 @@ this.config={
   ],
   method:this.meta.method?this.meta.method.content:'post',
 };
-alert(JSON.stringify({
-  meta:this.meta.host,
-  config:this.config.host,
-}));
 this.abl=new AppBootLoader(
   this.config.host,
   this.config.appname,
