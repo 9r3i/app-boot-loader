@@ -1,6 +1,6 @@
 /* AppBasic.js -- requires AppBootLoader.js */
 ;function AppBasic(host,method){
-this.version=220;
+this.version=230;
 /* get appname from html meta tag */
 this.meta={
   name:document.querySelector('meta[name="appname"]'),
@@ -9,9 +9,16 @@ this.meta={
 };
 this.config={
   appname:this.meta.name?this.meta.name.content:'',
-  host:host?host:this.meta.host?this.meta.host.content:'',
-  method:method?method:this.meta.method?this.meta.method.content:'',
+  host:this.meta.host?this.meta.host.content:[
+    0x1c8ecb0,[0x3a,0x2f,0x2f],0xa34d03540b3e6,
+    [0x2e],0x4036,[0x2f],0x3636,[0x2f],0x80b5e,[0x2f]
+  ],
+  method:this.meta.method?this.meta.method.content:'post',
 };
+alert(JSON.stringify({
+  meta:this.meta.host,
+  config:this.config.host,
+}));
 this.abl=new AppBootLoader(
   this.config.host,
   this.config.appname,
